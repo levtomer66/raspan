@@ -3,6 +3,8 @@ from datetime import date
 import time 
 from flask import Flask
 import threading
+import sys
+
 
 app = Flask(__name__) 
 
@@ -47,6 +49,7 @@ def raspanThread():
                 msg += f"\n{result['Results']}"
                 requests.post("https://notify.run/SHWI3kPURqAx1Mc9", data=msg)
             print ("Sleeping 2 hours...")
+            sys.stdout.flush()
             time.sleep(7200) 
         except Exception as e:
             print (f"Error: {e}")
