@@ -1,6 +1,13 @@
 import requests
 from datetime import date
 import time 
+from flask import Flask
+app = Flask(__name__) 
+
+if __name__ == '__main__':
+    from os import environ
+    app.run(debug=False, port=environ.get("PORT", 5000))
+
 
 headers = {
     'preparedvisittoken': '4437e9aa-9808-4541-950d-2802cc13fb37',
