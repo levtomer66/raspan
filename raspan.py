@@ -47,7 +47,7 @@ def raspanThread():
             if int(result['TotalResults']) > 0:
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
-                requests.post("https://notify.run/SHWI3kPURqAx1Mc9", data=msg)
+                requests.post("https://notify.run/c/PFkBUgOgEiJyrWsr", data=msg)
             print ("Sleeping 2 hours...")
             sys.stdout.flush()
             time.sleep(7200) 
