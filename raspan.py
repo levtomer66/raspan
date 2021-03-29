@@ -12,6 +12,9 @@ def flaskThread():
     from os import environ
     app.run(threaded=True, host='0.0.0.0', port=environ.get("PORT", 5000))
 
+@app.route("/")
+def main():
+    return "ok"
 
 def raspanThread():
     headers = {
