@@ -47,14 +47,15 @@ def raspanThread():
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
                 print (msg)
-                requests.post("https://notify.run/c/PFkBUgOgEiJyrWsr", data=msg)
                 sys.stdout.flush()
+                requests.post("https://notify.run/c/PFkBUgOgEiJyrWsr", data=msg)
                 time.sleep(172800)
             print ("Sleeping 2 hours...")
             sys.stdout.flush()
             time.sleep(7200) 
         except Exception as e:
             print (f"Error: {e}")
+            sys.stdout.flush()
 
 
 
