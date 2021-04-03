@@ -4,12 +4,12 @@ import time
 from flask import Flask
 import threading
 import sys
+from os import environ
 
 
 app = Flask(__name__) 
 
 def flaskThread():
-    from os import environ
     app.run(threaded=True, host='0.0.0.0', port=environ.get("PORT", 5000))
 
 @app.route("/")
@@ -46,14 +46,14 @@ def raspanThread():
             if not result['Success']:
                 print (f"Error [{result['ErrorNumber']}]: {result['ErrorMessage']}")
                 sys.stdout.flush()
-            if int(result['TotalResults']) > 0 or True or True:
+            if int(result['TotalResults']) > 0:
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
                 print (msg)
                 sys.stdout.flush()
                 requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data=msg)
                 time.sleep(172800)
-            print ("Sleeping Half a hour...")
+            print ("Sleeping 30 minutes...")
             sys.stdout.flush()
             time.sleep(1800)
         except Exception as e:
