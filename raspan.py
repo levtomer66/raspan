@@ -45,7 +45,7 @@ def raspanThread():
                 ('serviceId', '6142'),
                 ('startDate', date.today().strftime("%Y-%m-%d")),
             )
-            
+
             response = requests.get('https://central.qnomy.com/CentralAPI/SearchAvailableDates', headers=headers, params=params)
             result = response.json()
             print (f"Got response: {result}")
@@ -65,6 +65,7 @@ def raspanThread():
         except Exception as e:
             print (f"Error: {e}")
             sys.stdout.flush()
+
 
 if __name__ == '__main__':
     threading.Thread(target=raspanThread).start()
