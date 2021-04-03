@@ -60,9 +60,6 @@ def raspanThread():
             print (f"Error: {e}")
             sys.stdout.flush()
 
-https://notify.run/PFkBUgOgEiJyrWsr
-https://notify.run/c/PFkBUgOgEiJyrWsr
-
 if __name__ == '__main__':
     threading.Thread(target=raspanThread).start()
     threading.Thread(target=flaskThread).start()
