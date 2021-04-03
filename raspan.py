@@ -17,6 +17,7 @@ def main():
     return "ok"
 
 def raspanThread():
+    first = True
     headers = {
         'preparedvisittoken': '4437e9aa-9808-4541-950d-2802cc13fb37',
         'application-api-key': '8640a12d-52a7-4c2a-afe1-4411e00e3ac4',
@@ -32,21 +33,24 @@ def raspanThread():
     }
 
 
-    params = (
-        ('maxResults', '31'),
-        ('serviceId', '6142'),
-        ('startDate', date.today().strftime("%Y-%m-%d")),
-    )
 
     while True:
         try:
+            if first:
+                requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data="Deployed...")
+                first = False
+            params = (
+                ('maxResults', '31'),
+                ('serviceId', '6142'),
+                ('startDate', date.today().strftime("%Y-%m-%d")),
+            )
             response = requests.get('https://central.qnomy.com/CentralAPI/SearchAvailableDates', headers=headers, params=params)
             result = response.json()
             print (f"Got response: {result}")
             if not result['Success']:
                 print (f"Error [{result['ErrorNumber']}]: {result['ErrorMessage']}")
                 sys.stdout.flush()
-            if int(result['TotalResults']) > 0 or True or True:
+            if int(result['TotalResults']) > 0:
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
                 print (msg)
