@@ -51,7 +51,7 @@ def raspanThread():
                 msg += f"\n{result['Results']}"
                 print (msg)
                 sys.stdout.flush()
-                requests.post("https://notify.run/c/PFkBUgOgEiJyrWsr", data=msg)
+                requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data=msg)
                 time.sleep(172800)
             print ("Sleeping Half a hour...")
             sys.stdout.flush()
@@ -60,7 +60,8 @@ def raspanThread():
             print (f"Error: {e}")
             sys.stdout.flush()
 
-
+https://notify.run/PFkBUgOgEiJyrWsr
+https://notify.run/c/PFkBUgOgEiJyrWsr
 
 if __name__ == '__main__':
     threading.Thread(target=raspanThread).start()
