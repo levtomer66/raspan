@@ -46,7 +46,7 @@ def raspanThread():
             if not result['Success']:
                 print (f"Error [{result['ErrorNumber']}]: {result['ErrorMessage']}")
                 sys.stdout.flush()
-            if int(result['TotalResults']) > 0:
+            if int(result['TotalResults']) > 0 or True:
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
                 print (msg)
