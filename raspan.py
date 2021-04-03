@@ -55,7 +55,8 @@ def raspanThread():
                 time.sleep(172800)
             print ("Sleeping 2 hours...")
             sys.stdout.flush()
-            time.sleep(7200) 
+            # time.sleep(7200) 
+            time.sleep(10)
         except Exception as e:
             print (f"Error: {e}")
             sys.stdout.flush()
