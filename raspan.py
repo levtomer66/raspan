@@ -46,17 +46,16 @@ def raspanThread():
             if not result['Success']:
                 print (f"Error [{result['ErrorNumber']}]: {result['ErrorMessage']}")
                 sys.stdout.flush()
-            if int(result['TotalResults']) > 0:
+            if int(result['TotalResults']) > 0 or True:
                 msg = f"{result['TotalResults']} Available dates!! {result['Messages']}"
                 msg += f"\n{result['Results']}"
                 print (msg)
                 sys.stdout.flush()
                 requests.post("https://notify.run/c/PFkBUgOgEiJyrWsr", data=msg)
                 time.sleep(172800)
-            print ("Sleeping 2 hours...")
+            print ("Sleeping Half a hour...")
             sys.stdout.flush()
-            # time.sleep(7200) 
-            time.sleep(10)
+            time.sleep(1800)
         except Exception as e:
             print (f"Error: {e}")
             sys.stdout.flush()
