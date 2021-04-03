@@ -39,11 +39,13 @@ def raspanThread():
             if first:
                 requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data="Deployed...")
                 first = False
+
             params = (
                 ('maxResults', '31'),
                 ('serviceId', '6142'),
                 ('startDate', date.today().strftime("%Y-%m-%d")),
             )
+            
             response = requests.get('https://central.qnomy.com/CentralAPI/SearchAvailableDates', headers=headers, params=params)
             result = response.json()
             print (f"Got response: {result}")
