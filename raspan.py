@@ -37,7 +37,11 @@ def raspanThread():
     while True:
         try:
             if first:
-                requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data="Deployed...")
+                r = requests.post("https://api.pushover.net/1/messages.json", data = {
+                    "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
+                    "user": "uwsqxnsxkcr5zgxoztqhzadfyf4298",
+                    "message": "Deployed..."
+                })
                 first = False
 
             params = (
@@ -57,7 +61,12 @@ def raspanThread():
                 msg += f"\n{result['Results']}"
                 print (msg)
                 sys.stdout.flush()
-                requests.post("https://notify.run/PFkBUgOgEiJyrWsr", data=msg)
+                r = requests.post("https://api.pushover.net/1/messages.json", data = {
+                    "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
+                    "user": "uwsqxnsxkcr5zgxoztqhzadfyf4298",
+                    "message": msg
+                })
+                print (r.text)
                 time.sleep(172800)
             print ("Sleeping 30 minutes...")
             sys.stdout.flush()
