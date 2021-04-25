@@ -2,11 +2,6 @@ const app = require('../app')
 const axios = require('axios')
 
 app.get('/api/raspan', async (req, res) => {
-    await axios.post("https://api.pushover.net/1/messages.json", data = {
-        "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
-        "user": "uwsqxnsxkcr5zgxoztqhzadfyf4298",
-        "message": "Touched..."
-    })
     const headers = {
         'preparedvisittoken': '4437e9aa-9808-4541-950d-2802cc13fb37',
         'application-api-key': '8640a12d-52a7-4c2a-afe1-4411e00e3ac4',
