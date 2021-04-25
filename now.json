@@ -17,6 +17,7 @@
     "build": {
         "env": {
             "API_URL": "https://raspan-vercel.vercel.app/"
+            
         }
     },
     "routes": [
