@@ -26,7 +26,7 @@ app.get('/api', async (req, res) => {
     if  (result['Success'] === false) {
         console.log((`"Error [${result['ErrorNumber']}]: ${result['ErrorMessage']}`));
     }
-    if (result['TotalResults'] == 0) {
+    if (result['TotalResults'] > 0) {
         let msg = `${result['TotalResults']} Available dates!! ${result['Messages']}`
         msg += `\n${result['Results']}`
         console.log(msg);
