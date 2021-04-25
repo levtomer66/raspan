@@ -1,7 +1,8 @@
 <template>
   <div  class="content countdown-timer">
-    <p>{{ json_obj.TotalResults }} {{ json_obj.Results }}</p>
-    <span>https://myvisit.com/#!/home/service/6142</span>
+    <p>{{ json_obj.TotalResults }} Dates</p>
+    <p> {{ json_obj.Results }} </p>
+    <a href="https://myvisit.com/#!/home/service/6142"><span>Link</span></a>
   </div>
 </template>
 
