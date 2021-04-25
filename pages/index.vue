@@ -1,6 +1,7 @@
 <template>
   <div  class="content countdown-timer">
     <p>{{ json_obj.TotalResults }} {{ json_obj.Results }}</p>
+    <span>https://myvisit.com/#!/home/service/6142</span>
   </div>
 </template>
 
