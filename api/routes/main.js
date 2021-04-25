@@ -27,8 +27,8 @@ app.get('/api/raspan', async (req, res) => {
         console.log((`"Error [${result['ErrorNumber']}]: ${result['ErrorMessage']}`));
     }
     if (result['TotalResults'] > 0) {
-        let msg = `${result['TotalResults']} Available dates!! ${result['Messages']}`
-        msg += `\n${result['Results']}`
+        let msg = `${result['TotalResults']} Available dates!!`
+        msg += `\n${JSON.stringify(result['Results'])}`
         console.log(msg);
         const r = await axios.post("https://api.pushover.net/1/messages.json", data = {
             "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
