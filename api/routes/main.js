@@ -24,7 +24,7 @@ app.get('/api/raspan', async (req, res) => {
     const response = await axios.get(`https://central.qnomy.com/CentralAPI/SearchAvailableDates?maxResults=31&serviceId=6142&startDate=${year + "-" + month + "-" + date}`, { headers: headers })
     const result = response.data
     if  (result['Success'] === false) {
-        console.log((`"Error [${result['ErrorNumber']}]: ${result['ErrorMessage']}`));
+        console.log((`Error [${result['ErrorNumber']}]: ${result['ErrorMessage']}`));
     }
     if (result['TotalResults'] > 0) {
         let msg = `${result['TotalResults']} Available dates!!`
