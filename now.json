@@ -17,6 +17,7 @@
     },
     "routes": [
         { "src": "/api", "dest": "api/routes/index.js" },
+        { "src": "/api/raspan", "dest": "api/routes/index.js" },
         { "src": "/_nuxt/.+", "headers": { "cache-control": "s-maxage=31536000" } },
         { "src": "/(.*)", "dest": "$1" }
     ]
