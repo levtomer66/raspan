@@ -5,7 +5,7 @@ app.get('/api', async (req, res) => {
     const headers = {
         'preparedvisittoken': '4437e9aa-9808-4541-950d-2802cc13fb37',
         'application-api-key': '8640a12d-52a7-4c2a-afe1-4411e00e3ac4',
-        'authorization': 'JWT ' + process.env.MYVISIT_JWT,
+        'authorization': 'JWT ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InljeDFyWFRmalRjQjZIQWV1aGxWQklZZmZUbyJ9.eyJpc3MiOiJodHRwOi8vY2VudHJhbC5xbm9teS5jb20iLCJhdWQiOiJodHRwOi8vY2VudHJhbC5xbm9teS5jb20iLCJuYmYiOjE2MTkzMDYxOTgsImV4cCI6MTY1MDQxMDE5OCwidW5pcXVlX25hbWUiOiJjZjBhM2E4ZS1lZmMyLTRlN2EtOTJjMS04ZTc1OTgzYTQ1YTYifQ.ZHj5wgZNrpMYzbo0toQRJXEZWUK1Uw8wRG1GAaTtHL8V4rYZr96fN4dVXq2ftqDTeYQ48jRBt4EfspxfollSc0pf4e64XGpLzsASaS-5PHCvgSg4ELJF0NtwS1j7_DmtOuCF0dyWemA4pb-DBbr8zXizqEqyO9s60crWJ5hh__bOibyIhBczjq4NZjZ-kkbbaMp014zq1SKhYUc1IYZKbNR563Yu8hq2MzHhlVRd5ycaMS7rL3rzY_50wPB6pxou10ajcchTGY6GV0LTniCCdqrMZzaxpu_TgIl1U1AlToZw1mcOmTSk0QPIjcBUF68DT9UIk2WPPunWP3rca5S1pw',
         'accept': 'application/json, text/plain, */*',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36',
         'application-name': 'myVisit.com v3.5',
