@@ -105,9 +105,10 @@ button.big-button:active::before {
       }
   },
   fetch() {
-    this.$axios.get("/api").then(response => {
+    this.$axios.get("/api/raspan").then(response => {
+      console.log(response);
       this.json_obj = response
-      
+
     })
   },
   created() {
