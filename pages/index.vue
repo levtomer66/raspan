@@ -12,9 +12,9 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 .content {
-  max-width: 500px;
+  max-width: 900px;
   margin: auto;
-  text-align: right;
+  text-align: center;
 }
 :root {
   --backgroundColor: rgba(246, 241, 209);
@@ -32,7 +32,7 @@
 }
 body {
   font-family: 'Amatic SC', 'OpenSans', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 2;
   display: flex;
           align-items: center;
