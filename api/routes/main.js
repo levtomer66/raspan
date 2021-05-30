@@ -31,8 +31,8 @@ app.get('/api/raspan', async (req, res) => {
         msg += `\n${JSON.stringify(result['Results'])}`
         console.log(msg);
         const r = await axios.post("https://api.pushover.net/1/messages.json", data = {
-            "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
-            "user": "uwsqxnsxkcr5zgxoztqhzadfyf4298",
+            "token": "ahckimerwqwhickwcku8a14qa1tfys",
+            "user": "uiefspi2oys2pgo2pfhh7h31dvpb6t",
             "message": msg
         })
         console.log(r.data);
@@ -47,8 +47,8 @@ app.get('/api/raspan', async (req, res) => {
         nivotMsg += `\n${JSON.stringify(navResult['Results'])}`
         console.log(nivotMsg);
         const postData = await axios.post("https://api.pushover.net/1/messages.json", data = {
-            "token": "aq3pkim4zkdrxsribgdnth1fnizq33",
-            "user": "uwsqxnsxkcr5zgxoztqhzadfyf4298",
+            "token": "ahckimerwqwhickwcku8a14qa1tfys",
+            "user": "uiefspi2oys2pgo2pfhh7h31dvpb6t",
             "message": nivotMsg
         })
         console.log(postData.data);
