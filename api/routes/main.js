@@ -54,25 +54,6 @@ app.get('/api/raspan', async (req, res) => {
         console.log(postData.data);
     }
 
-    const navRes = await axios.get(`https://central.qnomy.com/CentralAPI/SearchAvailableDates?maxResults=31&serviceId=8873&startDate=${year + "-" + month + "-" + date}`, { headers: headers })
-    const navResult = navRes.data
-    if  (navResult['Success'] === false) {
-        console.log((`Error [${navResult['ErrorNumber']}]: ${navResult['ErrorMessage']}`));
-    }
-    if (navResult['TotalResults'] > 0) {
-        let nivotMsg = `Navigation: ${navResult['TotalResults']} Available dates!!`
-        nivotMsg += `\n${JSON.stringify(navResult['Results'])}`
-        console.log(nivotMsg);
-        const postData = await axios.post("https://api.pushover.net/1/messages.json", data = {
-            "token":   "ah2acbn5tnc7nhwb5umqgjju1k1m6z",
-	        "user":    "u85wt371dhctud6d7e29gkhanudcyu",
-            "message": nivotMsg
-        })
-        console.log(postData.data);
-    }
-    
-    console.log(result);
-    return res.status(200).send({ "machine": result, "navigation": navResult})
     // axios.post(`https://${process.env.API_KEY}:${process.env.API_SECRET}@api.cloudinary.com/v1_1/${process.env.CLOUDNAME}/resources/search`, {"expression": "folder=bots/botimzozli"} ,{ headers: {'Access-Control-Allow-Origin' : '*'}})
 
 })

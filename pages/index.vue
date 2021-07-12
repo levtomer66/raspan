@@ -48,7 +48,14 @@ body {
   export default {
     data() {
       return {
-        json_obj: {}
+        json_obj: {
+          machine: {
+            TotalResults: 0
+          },
+          navigation: {
+            TotalResults: 0
+          }
+        }
       }
   },
   fetch() {
